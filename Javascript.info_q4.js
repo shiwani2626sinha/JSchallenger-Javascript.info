@@ -16,6 +16,7 @@ function Calculator () {
 }
 
 //driver
+// multiple objects can be created
 let calculator = new Calculator();
  calculator.read();
 
