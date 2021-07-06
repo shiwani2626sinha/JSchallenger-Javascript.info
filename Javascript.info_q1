@@ -1,0 +1,71 @@
+
+Create an object calculator with three methods:
+
+    read() prompts for two values and saves them as object properties.
+    sum() returns the sum of saved values.
+    mul() multiplies saved values and returns the result.
+    
+    JS CODE AND SOL - 
+    <!doctype html>
+    <script src="https://en.js.cx/test/libs.js"></script>
+       <script src="test.js"></script>
+    <script>
+
+  let calculator = {
+   sum : function() {
+    return this.a + this.b; // func as expression
+  },
+
+  mul() {
+    return this.a * this.b; // shorthand for methods in an object literals
+  },
+
+  read () {
+    this.a = +prompt('a?', 0);
+    this.b = +prompt('b?', 0);
+  }
+};
+
+calculator.read();
+alert( calculator.sum() );
+alert( calculator.mul() );
+  
+
+</script>
+
+</html>
+
+
+test file 
+
+describe("calculator", function() {
+  
+  context("when 2 and 3 entered", function() {
+    beforeEach(function() {
+      sinon.stub(window, "prompt");
+
+      prompt.onCall(0).returns("2");
+      prompt.onCall(1).returns("3");
+
+      calculator.read();
+    });
+
+    afterEach(function() {
+      prompt.restore();
+    });
+    
+    it('the read get two values and saves them as object properties', function () {
+      assert.equal(calculator.a, 2);
+      assert.equal(calculator.b, 3);
+    });
+
+    it("the sum is 5", function() {
+      assert.equal(calculator.sum(), 5);
+    });
+
+    it("the multiplication product is 6", function() {
+      assert.equal(calculator.mul(), 6);
+    });
+  });
+
+});
