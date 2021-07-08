@@ -1,0 +1,27 @@
+<!--Usage of Oject.values or Object.keys
+
+Write a function count(obj) that returns the number of properties in the object:-->
+
+<!doctype html>
+<script src="https://en.js.cx/test/libs.js"></script>
+<script src="test.js"></script>
+<script>
+
+let user = {
+  name: 'John',
+  age: 30
+};
+
+function count (user) {
+  let count = 0; 
+  for (let val of Object.values(user))
+    count++;
+
+  return count;
+}
+
+alert( count(user) );
+</script>
+
+</html>
+
