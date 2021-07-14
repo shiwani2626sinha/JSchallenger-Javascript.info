@@ -32,5 +32,18 @@ let promise = new Promise(function(resolve,reject){
 
 //Accessing or subscribing to a promise object
 // how can a consumer use a async function created through the promise object
-// then/catch/finally
+// then/catch/finally - these are methods
+// .then() - method of the promise object
+let promise = new Promise (function(resolve, reject){
+})
 
+promise.then(
+ function(result){//success code },
+ function(error){//failure code}
+)
+// .then() --> takes two arguments
+
+promise.catch(alert
+ )
+  
+promise.finally(()=>{//left over task})  
