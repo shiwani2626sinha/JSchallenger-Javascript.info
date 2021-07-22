@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>JAVASCRIPT INFO QUESTION</title>
+  </head>
+  <body>
+    <div id="clock">
+      <span>HH</span>:
+      <span>MM</span>:
+      <span>SS</span>
+    </div> 
+    <script>
+      
+      //function that updates the DOM after every 1 second 
+      function update(){}
+      
+      let timer;
+      function start(){
+        if(!timer){
+          timer = setInterval(upadte,1000);
+        }
+      }
+      function stop(){
+       clearInterval(timer);
+       timer = null; 
+      }
+    </script>
+  </body>
+</html>
