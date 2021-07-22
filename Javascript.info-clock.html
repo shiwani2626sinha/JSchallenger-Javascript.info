@@ -11,7 +11,24 @@
     <script>
       
       //function that updates the DOM after every 1 second 
-      function update(){}
+      function update(){
+        
+        let clock = body.getElementById('clock');
+        let d = new date();
+        
+        let h = d.getHours();
+        if(h<10) h = '0'+ h;
+        clock.children[0].innerHTML=h;
+        
+        let minutes = date.getMinutes();
+        if (minutes < 10) minutes = '0' + minutes;
+        clock.children[1].innerHTML = minutes;
+
+        let seconds = date.getSeconds();
+        if (seconds < 10) seconds = '0' + seconds;
+        clock.children[2].innerHTML = seconds;
+        
+      }
       
       let timer;
       function start(){
