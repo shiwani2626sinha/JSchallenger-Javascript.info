@@ -1,0 +1,51 @@
+<!--Write a function createTree that creates a nested ul/li list from the nested object.-->
+
+<html>
+  <body>
+    <div class="container"></div>
+   
+    <script>
+    let data = {
+      "Fish": {
+        "trout": {},
+        "salmon": {}
+      },
+
+      "Tree": {
+        "Huge": {
+          "sequoia": {},
+          "oak": {}
+        },
+        "Flowering": {
+          "apple tree": {},
+          "magnolia": {}
+        }
+      }
+    };
+      
+      function createTree(container, data){
+      container.append(createTreeDom(data));
+      }
+      
+      function createTreeDom(data){
+        if (!Object.keys(data).length) return;
+        ul = createElement('ul');
+        
+        while(Object.key(data).length>0){
+          let li = createElement('li');
+          li.innerHTML= Object.key(data);
+          ul.append(li);
+          
+          let inner = createTreeDom(Object.key(data)[]);
+          ul.append(inner);
+          
+          return ul;
+        }
+      }
+      
+      let container = document.getElementById('container');
+    createTree(container, data);
+    </script>
+  </body>
+</html>
+  
