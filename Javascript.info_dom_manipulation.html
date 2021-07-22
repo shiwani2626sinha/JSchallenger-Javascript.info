@@ -6,11 +6,25 @@
 </ol>
 
 <script>
+  /*
+  incorrect code, because length keeps shrinking
   function clear(elem) { 
     for ( let i= 0; i< elem.childNodes.length ; i++)
     {
       elem.childNodes[i].remove();
     }
+  }*/
+  
+  // correct1
+  function clear(elem){
+    elem.innerHtml='';
+  }
+  
+  // correct2
+  function clear(elem){
+  while(elem.firstChild)
+  {
+    elem.firstChild.remove();
   }
 
   clear(elem); // clears the list
