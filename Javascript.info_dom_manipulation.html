@@ -1,0 +1,17 @@
+<!--Create a function clear(elem) that removes everything from the element.-->
+
+<ol id="elem">
+  <li>Hello</li>
+  <li>World</li>
+</ol>
+
+<script>
+  function clear(elem) { 
+    for ( let i= 0; i< elem.childNodes.length ; i++)
+    {
+      elem.childNodes[i].remove();
+    }
+  }
+
+  clear(elem); // clears the list
+</script>
